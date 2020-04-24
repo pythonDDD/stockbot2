@@ -72,13 +72,7 @@ def handle_image(event):
     line_bot_api.reply_message(event.reply_token, image_message)
 
 
-    # message_idから画像のバイナリデータを取得
-    message_content = line_bot_api.get_message_content(message_id)
-
-    with open(f"static/images/{message_id}.jpg"), "wb") as f:
-        # バイナリを1024バイトずつ書き込む
-        for chunk in message_content.iter_content():
-            f.write(chunk)
+    
 
 
 
