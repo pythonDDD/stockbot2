@@ -62,7 +62,7 @@ def handle_image(event):
     message_id = event.message.id
 
     test1 = dt.test1.png
-    main_image_path = f"static/images/{message_id}_test1.png"
+    main_image_path = f"static/images/{message_id}_test1"
 
     # 画像の送信
     image_message = ImageSendMessage(
