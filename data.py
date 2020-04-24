@@ -87,7 +87,7 @@ df_all.plot(figsize=(8,6),fontsize=16)
 plt.legend(loc = 'upper left', bbox_to_anchor=(0, 1), borderaxespad=0, fontsize=16)
 plt.grid(True)
 #ファイル保存
-plt.savefig("test1.jpg")
+plt.savefig("test1.png")
 #plt.show()　ファイルを保存する為には、プロットしない！！超重要！！！！
 
 #終値とパーセント表示のヘッドを抽出
@@ -225,7 +225,7 @@ def PythonNotify(message, *args):
 
 #ファイル読み込み送信
 if __name__=='__main__':
-    PythonNotify("パーセントグラフ" , "test1.jpg")
+    PythonNotify("パーセントグラフ" , "test1.png")
 
 #test3
 def PythonNotify(message, *args):
