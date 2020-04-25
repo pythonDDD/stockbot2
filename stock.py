@@ -51,12 +51,12 @@ def handle_message(event):
     result = dt.marketprice
     profit = dt.profit
     par = dt.par
-
+    test1 = dt.test1.png
 
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%"),
-        )
+        ,ImageSendMessage=test1)
 
 
 
