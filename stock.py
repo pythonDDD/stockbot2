@@ -1,4 +1,5 @@
-import data as dt
+import datamiku as miku
+import dataakito as akito
 from flask import Flask, request, abort
 import os
 
@@ -47,10 +48,22 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
-    word = event.message.text
-    result = dt.marketprice
-    profit = dt.profit
-    par = dt.par
+
+    if TextMessage == "みく":
+        word = event.message.text
+        result = miku.marketprice
+        profit = miku.profit
+        par = miku.par
+    elif TextMessage == "あきと":
+        word = event.message.text
+        result = akito.marketprice
+        profit = akito.profit
+        par = akito.par
+    else:
+        text = "名前を入力して下さい"
+    
+
+
 
 
     line_bot_api.reply_message(
