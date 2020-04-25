@@ -59,7 +59,9 @@ def handle_message(event):
         profit = akito.profit
         par = akito.par
     else:
-        text = "名前を入力して下さい"
+        result = "とてもスライム"
+        profit = "名前を平仮名で入れないと返信しない"
+        par = "俺の可能性は∞"
 
 
 
