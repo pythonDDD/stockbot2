@@ -12,38 +12,32 @@ number = "2019-12-4" #@param {type:"string"}
 #銘柄コード
 start = number
 end = datetime.date.today()
-code1 = "AAPL" #@param ["AAPL"] {allow-input: true}
-code2 = "AMAT" #@param ["AMD"] {allow-input: true}
-code3 = "AMD" #@param ["MSFT"] {allow-input: true}
-code4 = "PG" #@param ["FB"] {allow-input: true}
-code5 = "MSFT" #@param ["JNJ"] {allow-input: true}
-code6 = "FIT" #@param ["JNJ"] {allow-input: true}
-code7 = "JNJ" #@param ["JNJ"] {allow-input: true}
-code8 = "FB" #@param ["JNJ"] {allow-input: true}
-code9 = "^DJI" #@param ["JNJ"] {allow-input: true}
-codelist = [code1,code2,code3,code4,code5,code6,code7,code8,code9]
+code1 = "BYND" #@param ["AAPL"] {allow-input: true}
+code2 = "F" #@param ["AMD"] {allow-input: true}
+code3 = "^GSPC" #@param ["MSFT"] {allow-input: true}
+code4 = "XRX" #@param ["FB"] {allow-input: true}
+code5 = "SPXS" #@param ["JNJ"] {allow-input: true}
+code6 = "IBM" #@param ["JNJ"] {allow-input: true}
+code7 = "BUD" #@param ["JNJ"] {allow-input: true}
+codelist = [code1,code2,code3,code4,code5,code6,code7]
 #終値取得(data2に終値を取り込み))
 data2 = yf.download(codelist, start=start, end=end)["Adj Close"]
 #取得単価
-price1 =  253.06#@param {type:"number"}
-price2 =  62.01#@param {type:"number"}
-price3 =  32.585#@param {type:"number"}
-price4 =  111.5#@param {type:"number"}
-price5 =  153.17#@param {type:"number"}
-price6 =  6.63#@param {type:"number"}
-price7 =  139.47#@param {type:"number"}
-price8 =  187.6#@param {type:"number"}
-price9 =  0#@param {type:"number"}
+price1 =  98.02#@param {type:"number"}
+price2 =  6.24#@param {type:"number"}
+price3 =  0#@param {type:"number"}
+price4 = 25 #@param {type:"number"}
+price5 =  16.94#@param {type:"number"}
+price6 = 0 #@param {type:"number"}
+price7 =  45.01#@param {type:"number"}
 #保有数量
-code1stock =  11#@param {type:"number"}
-code2stock =  15#@param {type:"number"}
-code3stock =  10#@param {type:"number"}
+code1stock =  280#@param {type:"number"}
+code2stock =  21#@param {type:"number"}
+code3stock =  0#@param {type:"number"}
 code4stock =  3#@param {type:"number"}
-code5stock =  14#@param {type:"number"}
-code6stock =  20#@param {type:"number"}
-code7stock =  6#@param {type:"number"}
-code8stock =  6#@param {type:"number"}
-code9stock =  0#@param {type:"number"}
+code5stock =  600#@param {type:"number"}
+code6stock =  0#@param {type:"number"}
+code7stock =  28#@param {type:"number"}
 #取得価額。保有数量×取得単価
 mypf1 = code1stock * price1
 mypf2 = code2stock * price2
@@ -52,9 +46,7 @@ mypf4 = code4stock * price4
 mypf5 = code5stock * price5
 mypf6 = code6stock * price6
 mypf7 = code7stock * price7
-mypf8 = code8stock * price8
-mypf9 = code9stock * price9
-mypf = mypf1 + mypf2 + mypf3 + mypf4 + mypf5 + mypf6 + mypf7 + mypf8 + mypf9
+mypf = mypf1 + mypf2 + mypf3 + mypf4 + mypf5 + mypf6 + mypf7
 print(mypf)
 #prに時価総額を格納 終値行列×保有数量
 pr1 = data2[code1] * code1stock
@@ -64,9 +56,7 @@ pr4 = data2[code4] * code4stock
 pr5 = data2[code5] * code5stock
 pr6 = data2[code6] * code6stock
 pr7 = data2[code7] * code7stock
-pr8 = data2[code8] * code8stock
-pr9 = data2[code9] * code9stock
-pf = pr1 + pr2 + pr3 + pr4 + pr5 + pr6 + pr7 + pr8 + pr9
+pf = pr1 + pr2 + pr3 + pr4 + pr5 + pr6 +pr7
 marketprice = pf.iloc[-1]
 print(marketprice)
 #損益状況

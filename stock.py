@@ -58,16 +58,6 @@ def handle_message(event):
         TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%"),
         )
 
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-
-    image_message = ImageSendMessage(
-        original_content_url='https://example.com/original.jpg',
-        preview_image_url='https://example.com/preview.jpg'
-    )
-
-    line_bot_api.reply_message(
-        event.reply_token,image_message)
 
 
 
