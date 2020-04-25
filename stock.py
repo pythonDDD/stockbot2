@@ -51,26 +51,12 @@ def handle_message(event):
     result = dt.marketprice
     profit = dt.profit
     par = dt.par
+    test1 = dt.test1.png
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%")
-        )
-
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image(event):
-    message_id = event.message.id
-
-    test1 = dt.test1.png
-    main_image_path = f"static/images/{message_id}_test1"
-
-    # 画像の送信
-    image_message = ImageSendMessage(
-        original_content_url=f"https://stockbot2.herokuapp.com/{main_image_path}")
-
-    app.logger.info(f"https://stockbot2.herokuapp.com/{main_image_path}")
-    line_bot_api.reply_message(event.reply_token, image_message)
-
+        TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%"),
+        ImageSendMessage(image = test1))
 
 
 
