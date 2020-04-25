@@ -48,20 +48,19 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
+    word = event.message.text
 
-    if TextMessage == "みく":
-        word = event.message.text
+    if word == "みく":
         result = miku.marketprice
         profit = miku.profit
         par = miku.par
-    elif TextMessage == "あきと":
-        word = event.message.text
+    elif word == "あきと":
         result = akito.marketprice
         profit = akito.profit
         par = akito.par
     else:
         text = "名前を入力して下さい"
-    
+
 
 
 
