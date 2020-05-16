@@ -1,5 +1,7 @@
-import datamiku as miku
+import wikipedia
+wikipedia.set_lang("ja")
 import dataakito as akito
+import btcfx
 from flask import Flask, request, abort
 import os
 
@@ -50,18 +52,13 @@ def handle_message(event):
 
     word = event.message.text
 
-    if word == "みく":
-        result = miku.marketprice
-        profit = miku.profit
-        par = miku.par
-    elif word == "あきと":
-        result = akito.marketprice
-        profit = akito.profit
-        par = akito.par
+    if word == "株価":
+        text = "現在の時価総額は、"  + str(int(akito.marketprice)) + "ドルです。" + "評価損益は、" + str(int(akito.profit)) + "ドルです。" + str(akito.par) + "%"
+
+    elif word == "btc":
+        text = "bitFlyerFX価格:" + str(int(btcfx.price)) + "評価損益：" + btcfx.profit + '証拠金維持率：' + btcfx.ijiritu
     else:
-        result = "とてもスライム"
-        profit = "名前を平仮名で入れないと返信しない"
-        par = "俺の可能性は∞"
+        text = wikipedia.page(word).summary
 
 
 
@@ -69,8 +66,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%")
-        )
+        TextSendMessage(text))
 
 
 

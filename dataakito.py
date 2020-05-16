@@ -7,7 +7,7 @@ import numpy as np
 import seaborn as sns
 
 #スタート日を決める
-number = "2019-12-4" #@param {type:"string"}
+number = "2020-1-1" #@param {type:"string"}
 
 #銘柄コード
 start = number
@@ -23,21 +23,21 @@ codelist = [code1,code2,code3,code4,code5,code6,code7]
 #終値取得(data2に終値を取り込み))
 data2 = yf.download(codelist, start=start, end=end)["Adj Close"]
 #取得単価
-price1 =  98.02#@param {type:"number"}
+price1 =  0#@param {type:"number"}
 price2 =  6.24#@param {type:"number"}
 price3 =  0#@param {type:"number"}
 price4 = 25 #@param {type:"number"}
-price5 =  16.94#@param {type:"number"}
+price5 =  12.80#@param {type:"number"}
 price6 = 0 #@param {type:"number"}
-price7 =  45.01#@param {type:"number"}
+price7 =  47.17#@param {type:"number"}
 #保有数量
-code1stock =  280#@param {type:"number"}
+code1stock =  0#@param {type:"number"}
 code2stock =  21#@param {type:"number"}
 code3stock =  0#@param {type:"number"}
 code4stock =  3#@param {type:"number"}
-code5stock =  600#@param {type:"number"}
+code5stock =  1700#@param {type:"number"}
 code6stock =  0#@param {type:"number"}
-code7stock =  28#@param {type:"number"}
+code7stock =  63#@param {type:"number"}
 #取得価額。保有数量×取得単価
 mypf1 = code1stock * price1
 mypf2 = code2stock * price2
