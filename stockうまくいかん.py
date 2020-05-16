@@ -57,20 +57,21 @@ def handle_message(event):
         TextSendMessage(text="現在の時価総額は、\n"  + str(result) + "\n ドルです。" + "\n 評価損益は、 \n" + str(profit) + "\n ドルです。" + str(par) + "%")
         )
 
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image(event):
-    message_id = event.message.id
+@handler.add(MessageEvent, message=ImageMessage)👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
 
-    test1 = dt.test1.jpg
-    main_image_path = f"static/images/{message_id}_test1"
+def handle_image(event):👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
+    message_id = event.message.id👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
 
-    # 画像の送信
+    test1 = dt.test1.jpg👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
+    main_image_path = f"static/images/{message_id}_test1"👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
+
+    # 画像の送信👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
     image_message = ImageSendMessage(
         original_content_url=f"https://stockbot2.herokuapp.com/{main_image_path}")
 
     app.logger.info(f"https://stockbot2.herokuapp.com/{main_image_path}")
     line_bot_api.reply_message(event.reply_token, image_message)
-
+👈魔術師様～～！！！画像ファイルが読み取れません。てゆーか、ヘロクに画像ファイルが保存されてません！！
 
 
 
