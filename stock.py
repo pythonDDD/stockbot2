@@ -55,7 +55,7 @@ def handle_message(event):
     if word == "株価":
         text = "現在の時価総額は、"  + str(int(akito.marketprice)) + "ドルです。" + "評価損益は、" + str(int(akito.profit)) + "ドルです。" + str(akito.par) + "%"
 
-    elif word == "btc":
+    elif word == "ビットコ":
         text = "bitFlyerFX価格:" + str(int(btcfx.price)) + "評価損益：" + str(int(btcfx.profit)) + '証拠金維持率：' + str(int(btcfx.ijiritu)) + "％"
     else:
         text = wikipedia.page(word).summary
