@@ -77,7 +77,7 @@ df_all.plot(figsize=(8,6),fontsize=16)
 plt.legend(loc = 'upper left', bbox_to_anchor=(0, 1), borderaxespad=0, fontsize=16)
 plt.grid(True)
 #ファイル保存
-plt.savefig("test1.png")
+plt.savefig("test1.png")👈魔術師様～～～～～～～～～～～～！！！ここでファイルを保存している！！！
 #plt.show()　ファイルを保存する為には、プロットしない！！超重要！！！！
 
 #終値とパーセント表示のヘッドを抽出
@@ -102,7 +102,7 @@ stdpct.plot(label = True ,figsize = (8,6),marker = 'o',fontsize = 16)
 plt.legend(loc = 'upper left', bbox_to_anchor=(0, 1), borderaxespad=0, fontsize=16)
 plt.grid(True)
 #ファイル保存
-plt.savefig("test3.png")
+plt.savefig("test3.png")👈魔術師様～～～～～～～～～～～～！！！ここでファイルを保存している！！！
 
 #株価変動率のヘッド抽出
 print(stdpct.head())
@@ -121,7 +121,7 @@ ax.table(cellText=stastics.values,
          loc='center',
          bbox=[0,0,1,1])
 #ファイル保存
-plt.savefig("test4.png")
+plt.savefig("test4.png")👈魔術師様～～～～～～～～～～～～！！！ここでファイルを保存している！！！
 #ここで、重ね過ぎたfigファイルがダブって、グラフが二重になるのを防ぐため、clf()で削除。
 plt.clf()
 
@@ -134,7 +134,7 @@ sns.boxplot(data = stdpct,fliersize = 6,width = 0.5)
 sns.set_context("talk",font_scale = 1)
 plt.grid(True)
 #ファイル保存
-plt.savefig("test5.png")
+plt.savefig("test5.png")👈魔術師様～～～～～～～～～～～～！！！ここでファイルを保存している！！！
 #ここで、重ね過ぎたfigファイルがダブって、グラフが二重になるのを防ぐため、clf()で削除。
 plt.clf()
 
@@ -149,7 +149,7 @@ mask[np.triu_indices_from(mask)] = True
 
 sns.heatmap(stdpct1.corr(),annot = True,mask = mask)
 #ファイル保存
-plt.savefig('test6.png')
+plt.savefig('test6.png')👈魔術師様～～～～～～～～～～～～！！！ここでファイルを保存している！！！
 
 
 
@@ -157,7 +157,7 @@ plt.savefig('test6.png')
 #ここからはラインへ送信するコード。
 
 #株価行列の最終行のみ抽出。
-def lineNotify(message):
+def lineNotify(message):　👈これはラインノーティフィー用。送信専用であって、こちら側からのアクションには返信不可！！！
     line_notify_token = 'UJ'
     line_notify_api = 'https://notify-api.line.me/api/notify'
     payload = {'message': message}
