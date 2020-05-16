@@ -12,7 +12,7 @@ number = "2020-1-1" #@param {type:"string"}
 #銘柄コード
 start = number
 end = datetime.date.today()
-code1 = "BYND" #@param ["AAPL"] {allow-input: true}
+code1 = "SHOP" #@param ["AAPL"] {allow-input: true}
 code2 = "F" #@param ["AMD"] {allow-input: true}
 code3 = "^GSPC" #@param ["MSFT"] {allow-input: true}
 code4 = "XRX" #@param ["FB"] {allow-input: true}
@@ -35,9 +35,9 @@ code1stock =  0#@param {type:"number"}
 code2stock =  21#@param {type:"number"}
 code3stock =  0#@param {type:"number"}
 code4stock =  3#@param {type:"number"}
-code5stock =  1700#@param {type:"number"}
+code5stock =  100#@param {type:"number"}
 code6stock =  0#@param {type:"number"}
-code7stock =  63#@param {type:"number"}
+code7stock =  3#@param {type:"number"}
 #取得価額。保有数量×取得単価
 mypf1 = code1stock * price1
 mypf2 = code2stock * price2
@@ -158,7 +158,7 @@ plt.savefig('test6.png')
 
 #株価行列の最終行のみ抽出。
 def lineNotify(message):
-    line_notify_token = '7TSIKvVUMWFimJLZK9ERQg6Bdkk3pqNRrkGiGRqXHgJ'
+    line_notify_token = 'UJ'
     line_notify_api = 'https://notify-api.line.me/api/notify'
     payload = {'message': message}
     headers = {'Authorization': 'Bearer ' + line_notify_token}
