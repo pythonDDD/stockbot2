@@ -17,8 +17,9 @@ res = requests.get('https://api.bitflyer.jp/v1/ticker?product_code=FX_BTC_JPY')
 jsonData = res.json()
 
 price = "¥{:,.0f}".format(jsonData["ltp"])
-profit = data['open_position_pnl']
+
 
 print('預入証拠金：' + str(data['collateral']))
 print('純資産総額：' + str(data['collateral'] + data['open_position_pnl']))
 ijiritu = data['keep_rate'] * 100
+profit = data['open_position_pnl']
